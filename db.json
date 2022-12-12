@@ -1,0 +1,14 @@
+{
+    "cars": [
+        {
+            "model": "",
+            "owner": "",
+            "location": [],
+            "rating": "",
+            "reviews": [],
+            "description": "",
+            "features": [],
+            "images": []
+        }
+    ]
+}
