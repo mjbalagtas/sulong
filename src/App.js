@@ -1,11 +1,21 @@
 import "mapbox-gl/dist/mapbox-gl.css";
 import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css";
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import MapGL, {Marker} from "react-map-gl";
 import Geocoder from "react-map-gl-geocoder";
 import pinMarker from './img/pin.png'
+import Car from './components/Car'
+import carServices from './services/cars'
 
 const App = () => {
+  const [cars, setCars] = useState({features: [], images: []})
+  
+  useEffect(() => {
+    carServices
+      .getOne(1)
+      .then(response => setCars(response))
+  }, [])
+  console.log(cars, ' ', typeof(cars))
   const MAPBOX_TOKEN=process.env.REACT_APP_MAPBOX_TOKEN
   const [viewport, setViewport] = useState({
     latitude: 37.7577,
@@ -55,6 +65,7 @@ const App = () => {
           reverseGeocode={true}
         />
       </MapGL>
+      <Car car={cars} />
     </div>
   );
 };

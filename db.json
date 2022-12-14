@@ -1,14 +1,27 @@
 {
     "cars": [
         {
-            "model": "",
-            "owner": "",
-            "location": [],
-            "rating": "",
-            "reviews": [],
-            "description": "",
-            "features": [],
-            "images": []
+            "id": 1,
+            "model": "Honda Civic RS Turbo CVT Honda",
+            "owner": "mark",
+            "location": [14.960103, 120.792458],
+            "reviews": [{
+                "reviewer_id": "",
+                "score": 4,
+                "comment": "Good Car!"
+            }, {
+                "reviewer_id": "",
+                "score": 4,
+                "comment": "Nice Car!"
+            }],
+            "description": "Joe's Parking Garage\n530 S. Spring St. 90014",
+            "features": ["Automatic", "Instant Rental", "Air conditioned", "Bluetooth Wireless", "Tinted Windows"],
+            "images": ["./img/cars/1-01.jpg","./img/cars/1-02.jpg","./img/cars/1-03.jpg"]
         }
-    ]
+    ],
+    "user": [{
+        "id": 1,
+        "name": "mark",
+        "cars": [1]
+    }]
 }
